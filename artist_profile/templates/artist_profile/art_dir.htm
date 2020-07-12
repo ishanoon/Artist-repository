@@ -1,0 +1,31 @@
+{% extends 'artist_profile/main.htm' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-sm-9">
+        <table class="table w-100 text-center">
+            <thead class="thead text-capitalised">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Profession</th>
+                <th>Location</th>
+                <th><i class="fab fa-twitter"></i></th>
+                <th><i class="fab fa-instagram"></i></th>
+            </thead>
+            <tbody>
+                {% for art in artist_dir %}
+                    <tr>
+                        <td>{{art.id}}</td>
+                        <td><a href="{% url 'profile' art.id%}">{{art.name }}</a></td>
+                        <td>{{art.profession}}</td>
+                        <td>{{art.location}}</td>
+                        <td>{{art.twitter}}</td>
+                        <td>{{art.instagram}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

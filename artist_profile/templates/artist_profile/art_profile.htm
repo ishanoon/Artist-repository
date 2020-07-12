@@ -1,0 +1,29 @@
+{% extends 'artist_profile/main.htm' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <img class="card-img-top" src="holder.js/100x180/" alt="" style="display: inline-block; float: left;">
+            <div class="details" style="display: inline-block; float: right;">
+                <h4 class="card-title">{{art_prof.artist.name}}</h4>
+                <p class="display-6"><i class="fas fa-star"></i>{{art_prof.artist.profession}}</p>
+                <p class="display-6"><i class="fas fa-globe"></i>{{art_prof.artist.location}}</p>
+                 <div class="socials">
+                   <i class="fab fa-twitter"></i>{{art_prof.artist.twitter}}
+                   &nbsp;
+                   <i class="fab fa-instagram"></i>{{art_prof.artist.instagram}}
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{art_prof.biograpy}}</p>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{% url 'home' %}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left    "></i> Back to home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
